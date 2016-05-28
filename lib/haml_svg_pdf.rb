@@ -12,7 +12,7 @@ module HamlSvgPdf
     @dpi ||= 72
   end
 
-  def self.haml_svg_pdf(haml, sink)
+  def self.haml2pdf(haml, sink)
     source = Haml::Engine.new(haml).to_html
     svg = RSVG::Handle.new_from_data(source)
     svg.dpi = self.dpi
